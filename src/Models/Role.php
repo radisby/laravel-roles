@@ -31,4 +31,8 @@ class Role extends Model implements RoleHasRelationsContract
             $this->connection = $connection;
         }
     }
+    
+    public function statuses() {
+        return $this->belongsToMany('App\Status', 'role_status');
+    }
 }
